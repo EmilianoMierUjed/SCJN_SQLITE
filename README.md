@@ -17,6 +17,17 @@ pip install -r requirements.txt
 
 Mínimas dependencias: `requests`. Opcionalmente `python-docx` para extraer texto de los .docx de sentencias.
 
+## Pruebas offline
+
+El proyecto incluye una suite de pruebas offline con `pytest` en `tests/`.
+
+```bash
+pip install -r requirements.txt pytest
+pytest
+```
+
+Las pruebas validan esquema SQLite, FTS5/triggers, helpers de extracción y comportamiento básico de `extraer_texto_docx`, sin llamadas de red.
+
 ## Scripts
 
 ### `scjn_tesis_downloader.py` — Tesis y jurisprudencias
@@ -105,6 +116,7 @@ SELECT pertenencia, COUNT(*) FROM sentencias GROUP BY pertenencia;
 scjn-scraper/
 ├── scjn_tesis_downloader.py        # Descarga tesis/jurisprudencias
 ├── scjn_sentencias_downloader.py   # Descarga sentencias (engroses)
+├── tests/                          # Suite de pruebas offline (pytest)
 ├── requirements.txt                # Dependencias
 ├── README.md                       # Este archivo
 └── .gitignore                      # Archivos que git ignora
