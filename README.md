@@ -1,4 +1,4 @@
-# scjn-scraper ⚖️
+# scjn-sqlite
 
 Descarga **tesis/jurisprudencias** y **sentencias (engroses)** de la SCJN (México) desde la API oficial del Sistema de Informática Jurídica y las guarda en bases **SQLite con búsqueda de texto completo (FTS5)**.
 
